@@ -1,0 +1,21 @@
+     DSW(I)									DSW(I)
+     
+     NAME
+            dsw    delete interactively
+     
+     SYNOPSIS
+            dsw [ directory ]
+     
+     DESCRIPTION
+            For  each file in the given directory (`.'  if not specified) dsw types
+            its name.  If y is typed, the file is deleted; if x, dsw exits; if new-
+            line, the file is not deleted; if anything else, dsw asks again.
+     
+     SEE ALSO
+            rm(I)
+     
+     BUGS
+            The  name  dsw  is a carryover from the ancient past.  Its etymology is
+            amusing.
+     
+     				    3/15/72				DSW(I)

@@ -1,0 +1,35 @@
+.TH DSW I 3/15/72
+.SH NAME
+dsw  \*-  delete interactively
+.sp 1l
+.SH SYNOPSIS
+.B dsw
+[ directory ]
+.sp 1l
+.SH DESCRIPTION
+For
+each file in the given directory
+(`\fB.\fR'
+if not specified)
+.I dsw
+types its name.
+If
+.B y
+is typed, the file is deleted;
+if
+.B x,
+.I dsw
+exits;
+if new-line, the file is not deleted;
+if anything else,
+.I dsw
+asks again.
+.sp 1l
+.SH "SEE ALSO"
+rm(I)
+.sp 1l
+.SH BUGS
+The name
+.I dsw
+is a carryover from the ancient past.  Its etymology is
+amusing.

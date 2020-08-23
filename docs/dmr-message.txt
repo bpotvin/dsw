@@ -1,0 +1,62 @@
+dsw: pdp7 memorabilia
+
+dmr at research.UUCP dmr at research.UUCP
+Sat Dec 8 19:45:09 AEST 1984
+
+I happened to dredge up an old notebook and found a listing
+of the PDP-7 version of dsw.  Because several people have approached
+me recently about reviving a version of PDP-7 Unix as a sort of
+paleontological exhibit, and because the subject has been discussed
+here, I thought people might be interested in seeing the code.
+I first considered net.sources, but decided not to carry whimsy too far.
+
+		Dennis Ritchie
+
+Notes:
+
+1) The assembler has Knuth-style temporary labels but no literals.
+
+2) The name of the current directory was evidently ".."
+
+3) Formatting is faithfully reproduced.
+
+4) "sys save" makes a core image.
+------
+" dsw
+
+   lac djmp
+   dac .-1
+   oas cla
+   cma
+   tad d1
+   dac t1
+   sys open; dd; 0
+1:
+   lac d2
+   sys read; dir; 8
+   sna
+   sys exit
+   lac dir
+   sna
+   jmp 1b
+   isz t1
+   jmp 1b
+
+wr:
+   lac d1
+   sys write; dir+1; 4
+   lac d1
+   sys write; o12; 1
+   sys save
+do:
+   sys unlink; dir+1
+   sys exit
+
+d1: 1
+d2: 2
+o12: 012
+t1: 0
+djmp: jmp do
+dd: 056056; 040040; 040040; 040040
+dir: .=.+8
+
